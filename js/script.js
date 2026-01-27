@@ -7,7 +7,7 @@
 // ============================================
 const GOOGLE_FORM_CONFIG = {
     // ⚠️ REPLACE WITH YOUR GOOGLE FORM ACTION URL (e.g., https://docs.google.com/forms/d/e/.../formResponse)
-    ACTION_URL: 'https://docs.google.com/forms/d/e/YOUR_FORM_ID_HERE/formResponse',
+    ACTION_URL: 'https://docs.google.com/forms/d/e/1FAIpQLSfgQkOc3oMK8Jp1ktNVla94KZxbtVb434k4pC6uvRyIYRBIOA/viewform?usp=header',
 
     // ⚠️ REPLACE WITH YOUR ENTRY IDs (e.g., entry.123456)
     CONTACT_MAPPING: {
