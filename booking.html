@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Stay | The Grand Azure</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <h1 class="logo-text">The Grand Azure</h1>
+                </a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="rooms.html" class="nav-link">Rooms</a></li>
+                <li><a href="amenities.html" class="nav-link">Amenities</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="booking.html" class="nav-link btn-book active">Book Now</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Booking Hero -->
+    <main>
+        <section class="booking-hero">
+            <div class="booking-hero-bg">
+                <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1920&q=80"
+                    alt="Book Your Stay">
+                <div class="booking-hero-overlay"></div>
+            </div>
+            <div class="container">
+                <div class="booking-content">
+                    <!-- Glassmorphism Booking Card -->
+                    <div class="booking-card glass-card fade-up">
+                        <div class="booking-header">
+                            <h1>Reserve Your Suite</h1>
+                            <p>Experience luxury at The Grand Azure</p>
+                        </div>
+
+                        <form id="bookingForm" class="booking-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="checkIn">
+                                        <i class="fas fa-calendar-alt"></i> Check-In Date *
+                                    </label>
+                                    <input type="date" id="checkIn" name="checkIn" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="checkOut">
+                                        <i class="fas fa-calendar-alt"></i> Check-Out Date *
+                                    </label>
+                                    <input type="date" id="checkOut" name="checkOut" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="roomType">
+                                    <i class="fas fa-bed"></i> Room Type *
+                                </label>
+                                <select id="roomType" name="roomType" required>
+                                    <option value="">Select a room type</option>
+                                    <option value="classic" data-price="199">Classic Room - $199/night</option>
+                                    <option value="deluxe" data-price="299">Deluxe Suite - $299/night</option>
+                                    <option value="junior" data-price="379">Junior Suite - $379/night</option>
+                                    <option value="executive" data-price="449">Executive Suite - $449/night</option>
+                                    <option value="presidential" data-price="899">Presidential Suite - $899/night
+                                    </option>
+                                    <option value="penthouse" data-price="1499">Penthouse Suite - $1,499/night</option>
+                                </select>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="adults">
+                                        <i class="fas fa-user"></i> Adults *
+                                    </label>
+                                    <select id="adults" name="adults" required>
+                                        <option value="1">1 Adult</option>
+                                        <option value="2" selected>2 Adults</option>
+                                        <option value="3">3 Adults</option>
+                                        <option value="4">4 Adults</option>
+                                        <option value="5">5 Adults</option>
+                                        <option value="6">6 Adults</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="children">
+                                        <i class="fas fa-child"></i> Children
+                                    </label>
+                                    <select id="children" name="children">
+                                        <option value="0" selected>0 Children</option>
+                                        <option value="1">1 Child</option>
+                                        <option value="2">2 Children</option>
+                                        <option value="3">3 Children</option>
+                                        <option value="4">4 Children</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="fullName">
+                                    <i class="fas fa-user-circle"></i> Full Name *
+                                </label>
+                                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name"
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">
+                                    <i class="fas fa-envelope"></i> Email Address *
+                                </label>
+                                <input type="email" id="email" name="email" placeholder="your.email@example.com"
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">
+                                    <i class="fas fa-phone"></i> Phone Number *
+                                </label>
+                                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="specialRequests">
+                                    <i class="fas fa-comment-alt"></i> Special Requests
+                                </label>
+                                <textarea id="specialRequests" name="specialRequests" rows="3"
+                                    placeholder="Any special requests or preferences? (Optional)"></textarea>
+                            </div>
+
+                            <div class="booking-summary">
+                                <h3>Booking Summary</h3>
+                                <div class="summary-row">
+                                    <span>Number of Nights:</span>
+                                    <span id="nightsDisplay">-</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Room Rate:</span>
+                                    <span id="rateDisplay">-</span>
+                                </div>
+                                <div class="summary-row total">
+                                    <span>Estimated Total:</span>
+                                    <span id="totalDisplay">$0</span>
+                                </div>
+                                <p class="summary-note">* Prices exclude taxes and fees</p>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-full">
+                                <i class="fas fa-check-circle"></i> Confirm Reservation
+                            </button>
+                        </form>
+
+                        <div id="bookingMessage" class="booking-message"></div>
+                    </div>
+
+                    <!-- Benefits List -->
+                    <div class="booking-benefits fade-up" style="animation-delay: 0.2s">
+                        <h2>Why Book Direct?</h2>
+                        <ul class="benefits-list">
+                            <li>
+                                <i class="fas fa-tag"></i>
+                                <div>
+                                    <h4>Best Rate Guarantee</h4>
+                                    <p>Lowest prices when you book directly with us</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-gift"></i>
+                                <div>
+                                    <h4>Exclusive Perks</h4>
+                                    <p>Complimentary breakfast and room upgrades</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-ban"></i>
+                                <div>
+                                    <h4>Free Cancellation</h4>
+                                    <p>Cancel up to 48 hours before check-in</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-headset"></i>
+                                <div>
+                                    <h4>24/7 Support</h4>
+                                    <p>Round-the-clock assistance for your stay</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-star"></i>
+                                <div>
+                                    <h4>Loyalty Rewards</h4>
+                                    <p>Earn points towards future stays</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-lock"></i>
+                                <div>
+                                    <h4>Secure Payment</h4>
+                                    <p>Your information is safe and encrypted</p>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="need-help">
+                            <h3>Need Assistance?</h3>
+                            <p>Our reservation specialists are available 24/7 to help you book the perfect stay.</p>
+                            <div class="help-buttons">
+                                <a href="tel:+15551234567" class="btn btn-outline">
+                                    <i class="fas fa-phone"></i> Call Us
+                                </a>
+                                <a href="contact.html" class="btn btn-outline">
+                                    <i class="fas fa-envelope"></i> Email Us
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Badges -->
+        <section class="trust-section">
+            <div class="container">
+                <div class="trust-badges">
+                    <div class="trust-badge fade-up">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Secure Booking</h4>
+                        <p>SSL Encrypted</p>
+                    </div>
+                    <div class="trust-badge fade-up" style="animation-delay: 0.1s">
+                        <i class="fas fa-check-circle"></i>
+                        <h4>Verified Hotel</h4>
+                        <p>5-Star Rated</p>
+                    </div>
+                    <div class="trust-badge fade-up" style="animation-delay: 0.2s">
+                        <i class="fas fa-credit-card"></i>
+                        <h4>Flexible Payment</h4>
+                        <p>All Cards Accepted</p>
+                    </div>
+                    <div class="trust-badge fade-up" style="animation-delay: 0.3s">
+                        <i class="fas fa-undo"></i>
+                        <h4>Easy Cancellation</h4>
+                        <p>Full Refund Available</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-title">The Grand Azure</h3>
+                    <p class="footer-description">Experience unparalleled luxury and hospitality at our prestigious
+                        hotel, where every detail is crafted to perfection.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="rooms.html">Rooms & Suites</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="booking.html">Online Booking</a></li>
+                        <li><a href="amenities.html">Spa & Wellness</a></li>
+                        <li><a href="amenities.html">Fine Dining</a></li>
+                        <li><a href="amenities.html">Conference Facilities</a></li>
+                        <li><a href="contact.html">Concierge Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Luxury Avenue, Downtown District</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> reservations@grandazure.com</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Reception Service</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Grand Azure Hotel. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a
+                        href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

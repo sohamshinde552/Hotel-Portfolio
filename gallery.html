@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | The Grand Azure</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <h1 class="logo-text">The Grand Azure</h1>
+                </a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="rooms.html" class="nav-link">Rooms</a></li>
+                <li><a href="amenities.html" class="nav-link">Amenities</a></li>
+                <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="booking.html" class="nav-link btn-book">Book Now</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <main>
+        <section class="page-header">
+            <div class="page-header-bg">
+                <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1920&q=80" alt="Gallery">
+                <div class="page-header-overlay"></div>
+            </div>
+            <div class="page-header-content">
+                <h1 class="page-title fade-in">Our Gallery</h1>
+                <p class="page-subtitle fade-in">A Visual Journey Through Luxury</p>
+            </div>
+        </section>
+
+        <!-- Gallery Filters -->
+        <section class="gallery-filters">
+            <div class="container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="rooms">Rooms</button>
+                    <button class="filter-btn" data-filter="lobby">Lobby & Public Spaces</button>
+                    <button class="filter-btn" data-filter="dining">Dining</button>
+                    <button class="filter-btn" data-filter="outdoor">Outdoor & Recreation</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Grid - Rooms -->
+        <section class="gallery-section">
+            <div class="container">
+                <div class="gallery-category-title">
+                    <h2>Rooms & Suites</h2>
+                </div>
+                <div class="gallery-grid" data-category="rooms">
+                    <div class="gallery-item fade-up">
+                        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&q=80"
+                            alt="Deluxe Suite">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Deluxe Suite</h3>
+                                <p>Elegant bedroom with city views</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-up" style="animation-delay: 0.1s">
+                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80"
+                            alt="Executive Suite">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Executive Suite</h3>
+                                <p>Spacious living area</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-up" style="animation-delay: 0.2s">
+                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80"
+                            alt="Presidential Suite">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Presidential Suite</h3>
+                                <p>Luxury bedroom with terrace</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-up" style="animation-delay: 0.3s">
+                        <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800&q=80"
+                            alt="Junior Suite">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Junior Suite</h3>
+                                <p>Contemporary design</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-up" style="animation-delay: 0.4s">
+                        <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800&q=80"
+                            alt="Bathroom">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Luxury Bathroom</h3>
+                                <p>Marble finishes & premium fixtures</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-up" style="animation-delay: 0.5s">
+                        <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&q=80"
+                            alt="Classic Room">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Classic Room</h3>
+                                <p>Timeless elegance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Grid - Lobby -->
+        <section class="gallery-section alternate">
+            <div class="container">
+                <div class="gallery-category-title">
+                    <h2>Lobby & Public Spaces</h2>
+                </div>
+                <div class="gallery-grid" data-category="lobby">
+                    <div class="gallery-item fade-up">
+                        <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&q=80"
+                            alt="Main Lobby">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Grand Lobby</h3>
+                                <p>Elegant entrance with marble floors</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-up" style="animation-delay: 0.1s">
+                        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80"
+                            alt="Lounge Area">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Lounge Area</h3>
+                                <p>Sophisticated seating spaces</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-up" style="animation-delay: 0.2s">
+                        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80" alt="Atrium">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Central Atrium</h3>
+                                <p>Soaring ceilings & natural light</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-up" style="animation-delay: 0.3s">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80"
+                            alt="Business Lounge">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Business Lounge</h3>
+                                <p>Modern workspace design</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Grid - Dining -->
+        <section class="gallery-section">
+            <div class="container">
+                <div class="gallery-category-title">
+                    <h2>Dining Experiences</h2>
+                </div>
+                <div class="gallery-grid" data-category="dining">
+                    <div class="gallery-item fade-up">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80"
+                            alt="Azure Restaurant">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Azure Restaurant</h3>
+                                <p>Fine dining atmosphere</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-up" style="animation-delay: 0.1s">
+                        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80"
+                            alt="Terrace Lounge">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Terrace Lounge</h3>
+                                <p>Rooftop bar & lounge</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-up" style="animation-delay: 0.2s">
+                        <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=800&q=80"
+                            alt="Culinary Presentation">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Culinary Excellence</h3>
+                                <p>Michelin-starred cuisine</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-up" style="animation-delay: 0.3s">
+                        <img src="https://images.unsplash.com/photo-1525610553991-2bede1a236e2?w=800&q=80"
+                            alt="Private Dining">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Private Dining Room</h3>
+                                <p>Intimate dining experience</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-up" style="animation-delay: 0.4s">
+                        <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=800&q=80" alt="Bar">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Cocktail Bar</h3>
+                                <p>Premium spirits & mixology</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Grid - Outdoor -->
+        <section class="gallery-section alternate">
+            <div class="container">
+                <div class="gallery-category-title">
+                    <h2>Outdoor & Recreation</h2>
+                </div>
+                <div class="gallery-grid" data-category="outdoor">
+                    <div class="gallery-item fade-up">
+                        <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=800&q=80"
+                            alt="Infinity Pool">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Infinity Pool</h3>
+                                <p>Rooftop pool with city views</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-up" style="animation-delay: 0.1s">
+                        <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800&q=80"
+                            alt="Pool Deck">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Pool Deck</h3>
+                                <p>Luxurious lounging area</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-up" style="animation-delay: 0.2s">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80"
+                            alt="Spa Treatment">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Azure Spa</h3>
+                                <p>Tranquil treatment rooms</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-up" style="animation-delay: 0.3s">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80"
+                            alt="Fitness Center">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Fitness Center</h3>
+                                <p>State-of-the-art equipment</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-up" style="animation-delay: 0.4s">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
+                            alt="Steam Room">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Wellness Center</h3>
+                                <p>Sauna & steam facilities</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-up" style="animation-delay: 0.5s">
+                        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800&q=80"
+                            alt="Hotel Exterior">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Hotel Exterior</h3>
+                                <p>Stunning architecture at night</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content fade-up">
+                    <h2>See It All In Person</h2>
+                    <p>Experience the luxury showcased in these images for yourself</p>
+                    <a href="booking.html" class="btn btn-primary-large">Book Your Stay</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-title">The Grand Azure</h3>
+                    <p class="footer-description">Experience unparalleled luxury and hospitality at our prestigious
+                        hotel, where every detail is crafted to perfection.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="rooms.html">Rooms & Suites</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="booking.html">Online Booking</a></li>
+                        <li><a href="amenities.html">Spa & Wellness</a></li>
+                        <li><a href="amenities.html">Fine Dining</a></li>
+                        <li><a href="amenities.html">Conference Facilities</a></li>
+                        <li><a href="contact.html">Concierge Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Luxury Avenue, Downtown District</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> reservations@grandazure.com</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Reception Service</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Grand Azure Hotel. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a
+                        href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

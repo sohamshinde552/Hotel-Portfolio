@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | The Grand Azure</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <h1 class="logo-text">The Grand Azure</h1>
+                </a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="rooms.html" class="nav-link">Rooms</a></li>
+                <li><a href="amenities.html" class="nav-link">Amenities</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li><a href="booking.html" class="nav-link btn-book">Book Now</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <main>
+        <section class="page-header">
+            <div class="page-header-bg">
+                <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1920&q=80" alt="Contact Us">
+                <div class="page-header-overlay"></div>
+            </div>
+            <div class="page-header-content">
+                <h1 class="page-title fade-in">Get In Touch</h1>
+                <p class="page-subtitle fade-in">We're Here to Assist You</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Contact Form -->
+                    <div class="contact-form-wrapper fade-up">
+                        <h2>Send Us a Message</h2>
+                        <p class="form-description">Have a question or special request? Fill out the form below and our
+                            team
+                            will get back to you within 24 hours.</p>
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="reservation">Reservation Inquiry</option>
+                                    <option value="event">Event Planning</option>
+                                    <option value="amenities">Amenities & Services</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message *</label>
+                                <textarea id="message" name="message" rows="6" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                        </form>
+                        <div id="formMessage" class="form-message"></div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="contact-info-wrapper fade-up" style="animation-delay: 0.2s">
+                        <h2>Contact Information</h2>
+                        <div class="contact-info-list">
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Address</h3>
+                                    <p>123 Luxury Avenue<br>Downtown District<br>New York, NY 10001</p>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Phone</h3>
+                                    <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+                                    <p class="contact-note">Available 24/7</p>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Email</h3>
+                                    <p><a href="mailto:reservations@grandazure.com">reservations@grandazure.com</a></p>
+                                    <p><a href="mailto:concierge@grandazure.com">concierge@grandazure.com</a></p>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Reception Hours</h3>
+                                    <p>24 hours a day<br>7 days a week</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Media -->
+                        <div class="contact-social">
+                            <h3>Follow Us</h3>
+                            <div class="social-links-large">
+                                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="map-section">
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343008!2d-74.00425878428698!3d40.74076684379132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259bf5c1654f3%3A0xc80f9cfce5383d5d!2sGoogle!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+                        width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" title="The Grand Azure Hotel Location">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Quick answers to common inquiries</p>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item fade-up">
+                        <h3><i class="fas fa-question-circle"></i> What are your check-in and check-out times?</h3>
+                        <p>Check-in is at 3:00 PM and check-out is at 12:00 PM. Early check-in and late check-out are
+                            available upon request, subject to availability.</p>
+                    </div>
+                    <div class="faq-item fade-up" style="animation-delay: 0.1s">
+                        <h3><i class="fas fa-question-circle"></i> Do you offer airport transportation?</h3>
+                        <p>Yes, we provide luxury airport transfer services. Please contact our concierge at least 24
+                            hours
+                            in advance to arrange pickup.</p>
+                    </div>
+                    <div class="faq-item fade-up" style="animation-delay: 0.2s">
+                        <h3><i class="fas fa-question-circle"></i> Is parking available?</h3>
+                        <p>We offer both valet and self-parking options. Valet parking is complimentary for all guests,
+                            and
+                            self-parking is available in our underground garage.</p>
+                    </div>
+                    <div class="faq-item fade-up" style="animation-delay: 0.3s">
+                        <h3><i class="fas fa-question-circle"></i> Are pets allowed?</h3>
+                        <p>Yes, we are a pet-friendly hotel. We welcome dogs and cats up to 50 lbs. Please inform us
+                            during
+                            booking so we can prepare welcome amenities for your pet.</p>
+                    </div>
+                    <div class="faq-item fade-up" style="animation-delay: 0.4s">
+                        <h3><i class="fas fa-question-circle"></i> What is your cancellation policy?</h3>
+                        <p>Cancellations made 48 hours or more before check-in receive a full refund. Cancellations
+                            within
+                            48 hours are subject to a one-night charge.</p>
+                    </div>
+                    <div class="faq-item fade-up" style="animation-delay: 0.5s">
+                        <h3><i class="fas fa-question-circle"></i> Do you have accessible rooms?</h3>
+                        <p>Yes, we offer ADA-compliant accessible rooms with roll-in showers, grab bars, and other
+                            accessibility features. Please request during booking.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content fade-up">
+                    <h2>Ready to Experience Luxury?</h2>
+                    <p>Book your stay or contact us for personalized assistance</p>
+                    <div class="cta-buttons">
+                        <a href="booking.html" class="btn btn-primary-large">Book Now</a>
+                        <a href="tel:+15551234567" class="btn btn-outline-large">Call Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-title">The Grand Azure</h3>
+                    <p class="footer-description">Experience unparalleled luxury and hospitality at our prestigious
+                        hotel, where every detail is crafted to perfection.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="rooms.html">Rooms & Suites</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="booking.html">Online Booking</a></li>
+                        <li><a href="amenities.html">Spa & Wellness</a></li>
+                        <li><a href="amenities.html">Fine Dining</a></li>
+                        <li><a href="amenities.html">Conference Facilities</a></li>
+                        <li><a href="contact.html">Concierge Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Luxury Avenue, Downtown District</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> reservations@grandazure.com</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Reception Service</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Grand Azure Hotel. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a
+                        href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
