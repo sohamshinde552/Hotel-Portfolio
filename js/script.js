@@ -3,6 +3,39 @@
 // ============================================
 
 // ============================================
+// CONFIGURATION
+// ============================================
+const GOOGLE_FORM_CONFIG = {
+    // ⚠️ REPLACE WITH YOUR GOOGLE FORM ACTION URL (e.g., https://docs.google.com/forms/d/e/.../formResponse)
+    ACTION_URL: 'https://docs.google.com/forms/d/e/YOUR_FORM_ID_HERE/formResponse',
+
+    // ⚠️ REPLACE WITH YOUR ENTRY IDs (e.g., entry.123456)
+    CONTACT_MAPPING: {
+        firstName: 'entry.EXAMPLE_FIRSTNAME',
+        lastName: 'entry.EXAMPLE_LASTNAME',
+        email: 'entry.EXAMPLE_EMAIL',
+        phone: 'entry.EXAMPLE_PHONE',
+        subject: 'entry.EXAMPLE_SUBJECT',
+        message: 'entry.EXAMPLE_MESSAGE'
+    },
+
+    BOOKING_MAPPING: {
+        checkIn: 'entry.EXAMPLE_CHECKIN',
+        checkOut: 'entry.EXAMPLE_CHECKOUT',
+        roomType: 'entry.EXAMPLE_ROOMTYPE',
+        adults: 'entry.EXAMPLE_ADULTS',
+        children: 'entry.EXAMPLE_CHILDREN',
+        fullName: 'entry.EXAMPLE_FULLNAME',
+        email: 'entry.EXAMPLE_BOOKING_EMAIL',
+        phone: 'entry.EXAMPLE_BOOKING_PHONE',
+        specialRequests: 'entry.EXAMPLE_REQUESTS',
+        // Calculated fields (optional - add these to your Google Form if you want to track them)
+        totalPrice: 'entry.EXAMPLE_TOTAL',
+        nights: 'entry.EXAMPLE_NIGHTS'
+    }
+};
+
+// ============================================
 // NAVIGATION
 // ============================================
 document.addEventListener('DOMContentLoaded', function () {
@@ -140,16 +173,41 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            // Simulate form submission
-            setTimeout(() => {
-                showMessage('Thank you for your message! We will get back to you within 24 hours.', 'success');
-                contactForm.reset();
+            // Submit to Google Sheets
+            const formData = new FormData();
+            formData.append(GOOGLE_FORM_CONFIG.CONTACT_MAPPING.firstName, firstName);
+            formData.append(GOOGLE_FORM_CONFIG.CONTACT_MAPPING.lastName, lastName);
+            formData.append(GOOGLE_FORM_CONFIG.CONTACT_MAPPING.email, email);
+            formData.append(GOOGLE_FORM_CONFIG.CONTACT_MAPPING.phone, document.getElementById('phone').value.trim()); // Use raw value for optional fields
+            formData.append(GOOGLE_FORM_CONFIG.CONTACT_MAPPING.subject, subject);
+            formData.append(GOOGLE_FORM_CONFIG.CONTACT_MAPPING.message, message);
 
-                // Hide message after 5 seconds
-                setTimeout(() => {
-                    formMessage.style.display = 'none';
-                }, 5000);
-            }, 500);
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+
+            fetch(GOOGLE_FORM_CONFIG.ACTION_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: formData
+            })
+                .then(() => {
+                    showMessage('Thank you for your message! We will get back to you within 24 hours.', 'success');
+                    contactForm.reset();
+                    setTimeout(() => {
+                        formMessage.style.display = 'none';
+                    }, 5000);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    showMessage('There was an error sending your message. Please try again later.', 'error');
+                })
+                .finally(() => {
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                });
         });
     }
 
@@ -266,31 +324,70 @@ document.addEventListener('DOMContentLoaded', function () {
             const nights = Math.ceil((checkOutDate - checkInDate) / (1000 * 60 * 60 * 24));
             const total = totalDisplay.textContent;
 
-            // Show confirmation
-            const confirmationMessage = `
-                <strong>Booking Confirmed!</strong><br>
-                Thank you, ${fullName}!<br><br>
-                <strong>Reservation Details:</strong><br>
-                Room: ${roomType}<br>
-                Check-in: ${formatDate(checkIn)}<br>
-                Check-out: ${formatDate(checkOut)}<br>
-                Nights: ${nights}<br>
-                Total: ${total}<br><br>
-                A confirmation email has been sent to ${email}
-            `;
+            // Submit to Google Sheets
+            const formData = new FormData();
+            formData.append(GOOGLE_FORM_CONFIG.BOOKING_MAPPING.checkIn, checkIn);
+            formData.append(GOOGLE_FORM_CONFIG.BOOKING_MAPPING.checkOut, checkOut);
+            formData.append(GOOGLE_FORM_CONFIG.BOOKING_MAPPING.roomType, roomType);
+            formData.append(GOOGLE_FORM_CONFIG.BOOKING_MAPPING.adults, document.getElementById('adults').value);
+            formData.append(GOOGLE_FORM_CONFIG.BOOKING_MAPPING.children, document.getElementById('children').value);
+            formData.append(GOOGLE_FORM_CONFIG.BOOKING_MAPPING.fullName, fullName);
+            formData.append(GOOGLE_FORM_CONFIG.BOOKING_MAPPING.email, email);
+            formData.append(GOOGLE_FORM_CONFIG.BOOKING_MAPPING.phone, phone);
+            formData.append(GOOGLE_FORM_CONFIG.BOOKING_MAPPING.specialRequests, document.getElementById('specialRequests').value.trim());
+            // Calculated fields
+            formData.append(GOOGLE_FORM_CONFIG.BOOKING_MAPPING.totalPrice, total);
+            formData.append(GOOGLE_FORM_CONFIG.BOOKING_MAPPING.nights, nights);
 
-            showBookingMessage(confirmationMessage, 'success');
+            const submitBtn = bookingForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
 
-            // Scroll to message
-            bookingMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            submitBtn.disabled = true;
 
-            // Reset form after 3 seconds
-            setTimeout(() => {
-                bookingForm.reset();
-                nightsDisplay.textContent = '-';
-                rateDisplay.textContent = '-';
-                totalDisplay.textContent = '$0';
-            }, 3000);
+            fetch(GOOGLE_FORM_CONFIG.ACTION_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: formData
+            })
+                .then(() => {
+                    // Show confirmation
+                    const confirmationMessage = `
+                    <strong>Booking Confirmed!</strong><br>
+                    Thank you, ${fullName}!<br><br>
+                    <strong>Reservation Details:</strong><br>
+                    Room: ${roomType}<br>
+                    Check-in: ${formatDate(checkIn)}<br>
+                    Check-out: ${formatDate(checkOut)}<br>
+                    Nights: ${nights}<br>
+                    Total: ${total}<br><br>
+                    A confirmation email has been sent to ${email}
+                `;
+
+                    showBookingMessage(confirmationMessage, 'success');
+
+                    // Scroll to message
+                    bookingMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                    // Reset form after 3 seconds
+                    setTimeout(() => {
+                        bookingForm.reset();
+                        nightsDisplay.textContent = '-';
+                        rateDisplay.textContent = '-';
+                        totalDisplay.textContent = '$0';
+                        bookingMessage.style.display = 'none'; // Hide message when resetting
+                    }, 5000); // Increased to 5s to give time to read
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    showBookingMessage('There was an error processing your booking. If the problem persists, please call us.', 'error');
+                })
+                .finally(() => {
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                });
+
+            return; // Stop execution here, the fetch handles the rest
         });
     }
 
